@@ -26,6 +26,7 @@ mongoose.connect (database.url, function (err, rs){
 });
 
 // Routes.
+require ('./routes/entry') (app);
 
 // Listening port.
 app.listen (port);
