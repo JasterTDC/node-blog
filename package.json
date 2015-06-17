@@ -1,0 +1,13 @@
+{
+  "name"              : "NodeJS-blog",
+  "version"           : "0.0.1",
+  "main"              : "server.js",
+  "author"            : "Ismael Moral <jastertdc@gmail.com",
+  "dependencies"      : {
+    "express"         : "latest",
+    "mongoose"        : "latest",
+    "method-override" : "latest",
+    "morgan"          : "latest",
+    "body-parser"     : "latest"
+  }
+}
