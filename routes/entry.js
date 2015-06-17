@@ -21,7 +21,21 @@ module.exports = function (app){
     });
   };
 
-  // Routes definition. 
+  addEntry = function (req, res){
+    var entry = new Entry({
+      title         : req.body.title,
+      desc          : req.body.desc,
+      images        : req.body.images,
+      tags          : req.body.tags
+    });
+
+    entry.save (function (err){
+      if (err)
+        res.send (err);
+    });
+  };
+  // Routes definition.
   app.get ('/entries', findAllEntries);
   app.get ('/oneEntry', findFirstEntry);
+  app.post('/addEntry', addEntry);
 };
