@@ -1,7 +1,11 @@
 <!doctype html>
-<html>
+<html ng-app="angular-blog">
   <head>
     <title> Blog API specification </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- AngularJS and JQuery include.  -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/main.css" ></link>
     <!-- Latest compiled and minified CSS -->
@@ -12,11 +16,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
+  <body ng-controller="mainController">
     <div class="container">
 
+      <div id="entries" class="row">
+        <div class="col-sm-4 col-sm-4-offset" ng-repeat="elem in list">
+          <article>
+            <h3> {{ elem.title }} </h3>
+            <p> {{ elem.desc }} </p>
+            <p> Published on {{ elem.createdAt | date: 'dd-MMMM-yyyy' }} </p>
+          </article>
+        </div>
+      </div>
 
     </div>
+
+
+    <!-- Custom controller. -->
+    <script src="./js/mainController.js"></script>
   </body>
 
 </html>
