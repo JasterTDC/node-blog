@@ -1,7 +1,7 @@
-<h3> NodeJS test </h3>
+### NodeJS test
 
-<p> NodeJS blog.  </p>
+NodeJS blog.
 
-# Updates
+#### Updates
 
-<p> 18/06. Now main page will show all the entries stored in mongo database.  </p>
+* 18/06. Now main page will show all the entries stored in mongo database.
