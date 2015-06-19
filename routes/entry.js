@@ -22,11 +22,15 @@ module.exports = function (app){
   };
 
   addEntry = function (req, res){
+    var tags = req.body.tags;
+
+    console.log (tags.split(" "));
+
     var entry = new Entry({
       title         : req.body.title,
       desc          : req.body.desc,
       images        : req.body.images,
-      tags          : req.body.tags
+      tags          : tags.split(" ")
     });
 
     entry.save (function (err){

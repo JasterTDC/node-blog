@@ -2,6 +2,10 @@
 
 NodeJS blog.
 
+#### Bugs
+
+* Adding an article doesn't reset the form.
+
 #### Updates
 
 * 18/06. Now main page will show all the entries stored in mongo database.
@@ -10,4 +14,4 @@ NodeJS blog.
 
 * Add a "Create article" page.
 * Add restful service.
-* Improve information about images, and tags. 
+* Improve information about images, and tags.
