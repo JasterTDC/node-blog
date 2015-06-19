@@ -20,4 +20,15 @@ function mainController ($scope, $http){
 		.error(function(data) {
 			console.log('Error: ' + data);
 		});
+
+  $scope.addArticle = function (){
+    $http.post ('/addEntry', $scope.formData)
+      .success (function (data) {
+        $scope.formData = {};
+        $scope.list = data;
+      })
+      .error (function (data){
+        console.log ('Error: ' + data);
+      });
+  };
 }
