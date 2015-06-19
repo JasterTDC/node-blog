@@ -16,18 +16,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
 
-  <body ng-controller="mainController">
+  <body>
     <div class="container">
 
-      <div id="entries" class="row">
-        <div class="col-sm-4 col-sm-4-offset" ng-repeat="elem in list">
-          <article>
-            <h3> {{ elem.title }} </h3>
-            <p> {{ elem.desc }} </p>
-            <p> Published on {{ elem.createdAt | date: 'dd-MMMM-yyyy' }} </p>
-          </article>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Angular blog</a>
+          </div>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="">Add article</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </nav>
 
     </div>
 
