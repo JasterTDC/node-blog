@@ -4,7 +4,7 @@ NodeJS blog.
 
 #### Bugs
 
-* Adding an article doesn't reset the form. **_Solved_**.
+* Adding an article doesn't reset the form. **Solved**.
 
 #### Updates
 
