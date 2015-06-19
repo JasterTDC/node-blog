@@ -1,13 +1,13 @@
 <!doctype html>
 <html ng-app="angular-blog">
   <head>
-    <title> Blog API specification </title>
+    <title> Angular blog </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- AngularJS and JQuery include.  -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/main.css" ></link>
+    <link rel="stylesheet" href="./css/article.css" ></link>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
     <!-- Optional theme -->
@@ -16,14 +16,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
+  <body ng-controller="ArticleController as articleCtrl">
+
+    <menu-bar></menu-bar>
+
     <div class="container">
-      <menu-bar></menu-bar>
+
     </div>
 
 
     <!-- Custom controller. -->
-    <script src="./js/controllers/mainController.js"></script>
+    <script src="./js/controllers/article.js"></script>
   </body>
 
 </html>
