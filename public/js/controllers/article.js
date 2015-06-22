@@ -8,8 +8,34 @@
     };
   });
 
-  app.controller ('ArticleController', ['$http', function ($http){
-    this.article = {};
+  app.service ('articleFactory', ['$q', '$http', function ($q, $http){
+    this.getAllArticles = function (){
+      var deferred        = $q.defer(),
+          httpPromise     = $http.get ('/entries');
+
+      httpPromise.success (function (data){
+        deferred.resolve (data);
+      })
+      .error (function (err){
+        console.log (err);
+      });
+
+      return deferred.promise;
+    }
+  }]);
+
+  app.controller ('ArticleController', ['$http', 'articleFactory', '$scope', function ($http, articleFactory, $scope){
+    this.article = {}; // Simple article.
+    this.list = []; // Article list.
+
+    articleFactory.getAllArticles()
+    .then (function (data){
+      console.log (data);
+
+      $scope.list = data;
+    }, function (err){
+      console.error (err);
+    });
 
     this.addArticle = function (){
       $http.post ('/addEntry', this.article)
@@ -28,4 +54,5 @@
     };
 
   }]);
+
 })();
