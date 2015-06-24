@@ -8,10 +8,11 @@ NodeJS blog.
 
 #### Updates
 
+* 24/06. Now you can delete articles from the delete-article.html page. 
 * 18/06. Now main page will show all the entries stored in mongo database.
 
 #### Todo list
 
-* Add a "Create article" page.
+* Add a "Create article" page. **Done**.
 * Add restful service.
 * Improve information about images, and tags.

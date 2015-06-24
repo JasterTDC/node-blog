@@ -22,6 +22,20 @@
 
       return deferred.promise;
     }
+
+    this.getNumArticles = function (){
+      var deferred        = $q.defer(),
+          httpPromise     = $http.get ('/numEntries');
+
+      httpPromise.success (function (data){
+        deferred.resolve (data);
+      })
+      .error (function (err){
+        console.error (err);
+      });
+
+      return deferred.promise;
+    }
   }]);
 
   app.controller ('ArticleController', ['$http', 'articleFactory', '$scope', function ($http, articleFactory, $scope){
@@ -32,7 +46,8 @@
     .then (function (data){
       console.log (data);
 
-      $scope.list = data;
+      $scope.list         = data;
+      $scope.numArticles  = data.length;
     }, function (err){
       console.error (err);
     });
@@ -51,6 +66,18 @@
 
     this.resetArticle = function (){
       this.article = {};
+    };
+
+    this.deleteArticle = function (id){
+      $http.delete ('/deleteEntry/' + id)
+      .success (function (data){
+        console.log (data);
+
+        $scope.list = data;
+      })
+      .error (function (err){
+        console.error (err);
+      });
     };
 
   }]);

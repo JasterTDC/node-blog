@@ -24,8 +24,6 @@ module.exports = function (app){
   addEntry = function (req, res){
     var tags = req.body.tags;
 
-    console.log (tags.split(" "));
-
     var entry = new Entry({
       title         : req.body.title,
       desc          : req.body.desc,
@@ -38,8 +36,38 @@ module.exports = function (app){
         res.send (err);
     });
   };
+
+  deleteEntry = function (req, res){
+    Entry.remove ({
+      _id : req.params.entry
+    }, function (err, conj){
+      if (err)
+        res.send (err);
+
+      Entry.find (function (err, conj){
+        if (err)
+          res.send (err);
+
+        res.json (conj);
+      });
+    });
+  };
+
+  numEntries = function (req, res){
+    var query = Entry.find().count();
+
+    query.exec (function (err, conj){
+      if (err)
+        res.send (err);
+
+      res.json ([{ "Num" : conj }]);
+    });
+  };
+  
   // Routes definition.
-  app.get ('/entries', findAllEntries);
-  app.get ('/oneEntry', findFirstEntry);
-  app.post('/addEntry', addEntry);
+  app.get     ('/entries', findAllEntries);
+  app.get     ('/oneEntry', findFirstEntry);
+  app.get     ('/numEntries', numEntries);
+  app.post    ('/addEntry', addEntry);
+  app.delete  ('/deleteEntry/:entry', deleteEntry);
 };

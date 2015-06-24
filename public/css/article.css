@@ -2,3 +2,8 @@
 .container {
   margin-top: 10px;
 }
+
+.menu-option {
+  font-size: 9pt;
+  color: #2335FA;
+}
