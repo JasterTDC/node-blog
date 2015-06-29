@@ -1,0 +1,7 @@
+<div class="container" class="ArticleController as ArticleCtrl">
+  <h2> Articles <span class="badge"> {{ numArticles }} </span> </h2>
+  <div class="col-sm-4" ng-repeat="elem in list">
+    <h4> {{ elem.title }} </h4>
+    <p> {{ elem.desc }} </p>
+  </div>
+</div>

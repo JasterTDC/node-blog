@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- AngularJS and JQuery include.  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-route.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/article.css" ></link>
     <!-- Latest compiled and minified CSS -->
@@ -21,15 +22,15 @@
     <menu-bar></menu-bar>
 
     <div class="container" ng-controller="ArticleController as articleCtrl">
-      <h2> Articles <span class="badge"> {{ numArticles }} </span></h2>
-      <div class="col-sm-4" ng-repeat="elem in list">
-        <h4>{{ elem.title }}</h4>
-        <p> {{ elem.desc }} </p>
-      </div>
+      
+      <articles-info></articles-info>
+
     </div>
 
     <!-- Custom controller. -->
     <script src="./js/controllers/article.js"></script>
+    <script src="./js/controllers/tab.js"></script>
+    <script src="./js/controllers/directives.js"></script>
   </body>
 
 </html>

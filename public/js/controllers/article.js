@@ -1,12 +1,12 @@
 (function (){
-  var app = angular.module ('angular-blog', []);
+  var app = angular.module ('angular-blog', ['ngRoute', 'Tab', 'Directives']);
 
-  app.directive ('menuBar', function (){
-    return {
-      restrict        : 'E',
-      templateUrl     : '../templates/menu-bar.html'
-    };
-  });
+  app.config (['$routeProvider', function ($routeProvider){
+    $routeProvider.when ('/ShowArticles/:articleId', {
+      templateUrl         : './templates/article.html',
+      controller          : 'SingleArticleCtrl'
+    });
+  }]);
 
   app.service ('articleFactory', ['$q', '$http', function ($q, $http){
     this.getAllArticles = function (){
