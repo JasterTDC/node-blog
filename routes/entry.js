@@ -46,7 +46,9 @@ module.exports = function (app){
       if (err)
         res.send (err);
 
-      Entry.find (function (err, conj){
+      var query = Entry.find().sort("-createdAt");
+
+      query.exec (function (err, conj){
         if (err)
           res.send (err);
 

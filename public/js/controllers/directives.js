@@ -26,4 +26,13 @@ app.directive ('articlesForm', function (){
   };
 });
 
+app.directive ('articlesDelete', function (){
+  return {
+    restrict        : 'E',
+    templateUrl     : '../templates/articles-delete.html',
+    controller      : 'ArticleController',
+    controllerAs    : 'ArticleCtrl'
+  };
+});
+
 })();

@@ -1,0 +1,10 @@
+<div class="col-md-10">
+  <h2> Articles <span class="badge"> {{ numArticles }} </span> </h2>
+  <div class="col-md-10" ng-repeat="elem in list">
+    <h4> {{ elem.title }} <a href="" ng-click="ArticleCtrl.deleteArticle(elem._id)"><span class="glyphicon glyphicon-remove"></span></a></h4>
+    <p> {{ elem.desc }} </p>
+    <div class="col-sd-4" ng-repeat="it in elem.tags">
+      <span class="tagElement">{{ it }}</span>
+    </div>
+  </div>
+</div>
