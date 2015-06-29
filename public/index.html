@@ -17,14 +17,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
+  <body ng-controller="TabController as TabCtrl">
 
     <menu-bar></menu-bar>
 
     <div class="container" ng-controller="ArticleController as articleCtrl">
-      
-      <articles-info></articles-info>
+      <div class="row" ng-show="TabCtrl.isSelectedTab(0)">
+        <articles-info></articles-info>
+      </div>
 
+      <div class="row" ng-show="TabCtrl.isSelectedTab(1)">
+        <articles-form></articles-form>
+      </div>
     </div>
 
     <!-- Custom controller. -->

@@ -4,7 +4,9 @@ module.exports = function (app){
   var Entry = require ('../models/entry');
 
   findAllEntries = function (req, res){
-    Entry.find (function (err, conj){
+    var query = Entry.find().sort("-createdAt");
+
+    query.exec (function (err, conj){
       if (err)
         res.send (err);
 
@@ -63,7 +65,7 @@ module.exports = function (app){
       res.json ([{ "Num" : conj }]);
     });
   };
-  
+
   // Routes definition.
   app.get     ('/entries', findAllEntries);
   app.get     ('/oneEntry', findFirstEntry);

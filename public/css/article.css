@@ -1,9 +1,29 @@
 
 .container {
   margin-top: 10px;
+  border: none;
 }
 
 .menu-option {
   font-size: 9pt;
   color: #2335FA;
+}
+
+.row {
+  border: none;
+}
+
+.panel {
+  border: none;
+}
+
+.tagElement {
+  margin-right: 5px;
+  border: 1px solid lightgray;
+  background-color: lightgray;
+  padding: 3px;
+}
+
+.col-sd-4{
+  display: inline-block;
 }
