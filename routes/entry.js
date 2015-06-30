@@ -69,7 +69,21 @@ module.exports = function (app){
   };
 
   updateEntry = function (req, res){
-    console.log (req.body);
+    var query         = { _id : req.body._id },
+        article       = {
+          title     : req.body.title,
+          desc      : req.body.desc,
+          images    : req.body.images,
+          tags      : req.body.tags
+          },
+        options       = {};
+
+    Entry.update (query, article, options, function (err, conj){
+      if (err)
+        res.send (err);
+
+      res.json (conj);
+    });
   };
 
   // Routes definition.
