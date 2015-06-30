@@ -68,6 +68,10 @@ module.exports = function (app){
     });
   };
 
+  updateEntry = function (req, res){
+
+  };
+
   // Routes definition.
   app.get     ('/entries', findAllEntries);
   app.get     ('/oneEntry', findFirstEntry);
