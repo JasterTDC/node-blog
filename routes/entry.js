@@ -69,13 +69,14 @@ module.exports = function (app){
   };
 
   updateEntry = function (req, res){
-
+    console.log (req.body);
   };
 
   // Routes definition.
-  app.get     ('/entries', findAllEntries);
-  app.get     ('/oneEntry', findFirstEntry);
-  app.get     ('/numEntries', numEntries);
-  app.post    ('/addEntry', addEntry);
-  app.delete  ('/deleteEntry/:entry', deleteEntry);
+  app.get     ('/api/entries', findAllEntries);
+  app.get     ('/api/oneEntry', findFirstEntry);
+  app.get     ('/api/numEntries', numEntries);
+  app.post    ('/api/addEntry', addEntry);
+  app.delete  ('/api/deleteEntry/:entry', deleteEntry);
+  app.update  ('/api/updateEntry', updateEntry);
 };

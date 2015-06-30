@@ -11,7 +11,7 @@
   app.service ('articleFactory', ['$q', '$http', function ($q, $http){
     this.getAllArticles = function (){
       var deferred        = $q.defer(),
-          httpPromise     = $http.get ('/entries');
+          httpPromise     = $http.get ('/api/entries');
 
       httpPromise.success (function (data){
         deferred.resolve (data);
@@ -25,7 +25,7 @@
 
     this.getNumArticles = function (){
       var deferred        = $q.defer(),
-          httpPromise     = $http.get ('/numEntries');
+          httpPromise     = $http.get ('/api/numEntries');
 
       httpPromise.success (function (data){
         deferred.resolve (data);
@@ -53,7 +53,7 @@
     });
 
     this.addArticle = function (){
-      $http.post ('/addEntry', this.article)
+      $http.post ('/api/addEntry', this.article)
       .success (function (data){
         console.log (data);
       })
@@ -69,7 +69,7 @@
     };
 
     this.deleteArticle = function (id){
-      $http.delete ('/deleteEntry/' + id)
+      $http.delete ('/api/deleteEntry/' + id)
       .success (function (data){
         console.log (data);
 
