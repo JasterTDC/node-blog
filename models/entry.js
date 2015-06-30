@@ -8,7 +8,8 @@ var entrySchema     = new Schema({
   desc              : { type: String, default: '' },
   images            : { type: Array, default: '' },
   tags              : { type: Array, default: '' },
-  comments          : { type: Array, default: '' }
+  comments          : { type: Array, default: '' },
+  language          : { type: String, default: '' },
   createdAt         : { type: Date, default: Date.now}
 }, { versionKey : false });
 

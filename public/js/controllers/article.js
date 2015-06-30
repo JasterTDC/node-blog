@@ -40,6 +40,7 @@
 
   app.controller ('ArticleController', ['$http', 'articleFactory', '$scope', function ($http, articleFactory, $scope){
     this.article = {}; // Simple article.
+    this.article.language = "en";
     this.list = []; // Article list.
 
     articleFactory.getAllArticles()
@@ -67,6 +68,16 @@
     this.resetArticle = function (){
       this.article = {};
     };
+
+    this.updateArticle = function (){
+      $http.update ('/api/updateEntry', this.article)
+      .success (function (data){
+        console.log (data);
+      })
+      .error (function (data){
+        console.error (data);
+      });
+    }
 
     this.deleteArticle = function (id){
       $http.delete ('/api/deleteEntry/' + id)

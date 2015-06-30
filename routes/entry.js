@@ -78,5 +78,5 @@ module.exports = function (app){
   app.get     ('/api/numEntries', numEntries);
   app.post    ('/api/addEntry', addEntry);
   app.delete  ('/api/deleteEntry/:entry', deleteEntry);
-  app.update  ('/api/updateEntry', updateEntry);
+  app.post    ('/api/updateEntry', updateEntry);
 };
